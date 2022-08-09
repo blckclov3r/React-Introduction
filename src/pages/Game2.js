@@ -1,9 +1,11 @@
 import React from 'react'
 import "./Game2.css";
+import { toast } from 'react-toastify';
 
 function Square(props) {
+
   return (
-    <button className="square" onClick={props.onClick}>
+    <button className="square" onClick={props.onClick} style={{color: props.value === 'X' ? 'red' : 'blue'}}>
       {props.value}
     </button>
   );
@@ -87,7 +89,33 @@ class Board extends React.Component {
     const current = history[this.state.stepNumber];
     const winner = calculateWinner(current.squares);
 
+    
+
+    let status;
+    if (winner) {
+      toast.success('Winner is '+winner, {
+        position: "bottom-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+      status = "Winner: " + winner;
+    } else {
+      status = "Next player: " + (this.state.xIsNext ? "X" : "O");
+    }
+
     const moves = history.map((step, move) => {
+      console.log(step.squares);
+      
+      const fillAll = step.squares.every(Boolean);
+   
+      if(fillAll){
+        console.log("All array has been filled");
+      }
+
       const desc = move ?
         'Go to move #' + move :
         'Go to game start';
@@ -98,16 +126,11 @@ class Board extends React.Component {
       );
     });
 
-    let status;
-    if (winner) {
-      status = "Winner: " + winner;
-    } else {
-      status = "Next player: " + (this.state.xIsNext ? "X" : "O");
-    }
+  
 
     return (
    
-      <div>
+      <div >
         <p>You probably already know how to play Tic-Tac-Toe. It's a really simple game, right? That's what most people think. But if you really wrap your brain around it, you'll discover that Tic-Tac-Toe isn't quite as simple as you think!
 
 Tic-Tac -Toe (along with a lot of other games) involves looking ahead and trying to figure out what the person playing against you might do next.</p>
@@ -116,7 +139,7 @@ Tic-Tac -Toe (along with a lot of other games) involves looking ahead and trying
             
         <div className="game-board">
           <Board
-            className="shadow-sm"
+     
             squares={current.squares}
             onClick={i => this.handleClick(i)}
           />
