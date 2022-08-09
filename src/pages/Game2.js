@@ -84,17 +84,21 @@ class Board extends React.Component {
     });
   }
 
+  
+
   render() {
     const history = this.state.history;
     const current = history[this.state.stepNumber];
     const winner = calculateWinner(current.squares);
 
-    
+
 
     let status;
+
     if (winner) {
+      
       toast.success('Winner is '+winner, {
-        position: "bottom-center",
+        position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,
         closeOnClick: true,
@@ -102,6 +106,7 @@ class Board extends React.Component {
         draggable: true,
         progress: undefined,
         });
+
       status = "Winner: " + winner;
     } else {
       status = "Next player: " + (this.state.xIsNext ? "X" : "O");
@@ -109,12 +114,8 @@ class Board extends React.Component {
 
     const moves = history.map((step, move) => {
       
-      const fillAll = step.squares.every(Boolean);
-   
-      if(fillAll){
-        console.log("All array has been filled");
-      }
-
+      // let fillAll = step.squares.every(Boolean);
+      
       const desc = move ?
         'Go to move #' + move :
         'Go to game start';
