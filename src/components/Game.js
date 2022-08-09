@@ -108,7 +108,8 @@ class Board extends React.Component {
 
     return (
       <div className=''>
-          <div className="game">
+            <a href="https://reactjs.org/tutorial/tutorial.html">React Doc</a>
+          <div className="game mt-4">
         <div className="game-board">
           <Board
             squares={current.squares}

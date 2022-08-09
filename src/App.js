@@ -7,10 +7,11 @@ import Game2 from './pages/Game2';
 import Rules from './pages/Rules';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
+import Footer from './components/Footer';
 export default function App() {
   
   return (
-    <div className='container'>
+    <div className='container mainapp'>
     
         <BrowserRouter>
         <Header />
@@ -20,7 +21,7 @@ export default function App() {
               <Route path="/rules" element={<Rules />} />
             </Routes>
         </BrowserRouter>
-        
+          <Footer/>
         <ToastContainer />
     </div>
   )

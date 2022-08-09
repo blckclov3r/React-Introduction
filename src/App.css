@@ -1,4 +1,4 @@
-body{
+.mainapp{
     font-family: 'Open Sans', sans-serif;
     background: #f1f1f1;
     background-image: linear-gradient(rgba(255,255,255,.2), rgba(255,255,255,.4)),url('https://raw.githubusercontent.com/blckclov3r/blckclov3r.github.io/master/public/bgslash.webp');
@@ -6,4 +6,8 @@ body{
     height: 100vh;
     display: flex;
     flex-direction: column;
+}
+
+footer{
+    margin-top: auto;
 }
