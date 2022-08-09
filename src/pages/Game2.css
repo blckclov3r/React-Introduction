@@ -1,0 +1,54 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+    background: #f1f1f1;
+    background-image: linear-gradient(rgba(255,255,255,.2), rgba(255,255,255,.4)),url('https://raw.githubusercontent.com/blckclov3r/blckclov3r.github.io/master/public/bgslash.webp');
+    background-size: auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+ol, ul {
+    padding-left: 30px;
+  }
+  
+ 
+  .status {
+    margin-bottom: 10px;
+  }
+  
+  .square {
+    background: #fff;
+    border: 1px solid #999;
+    float: left;
+    font-size: 100px;
+    font-weight: bold;
+    line-height: 100px;
+    height: 100px;
+    margin-right: -1px;
+    margin-top: -1px;
+    padding: 0;
+    text-align: center;
+    width: 100px;
+  }
+  
+  .square:focus {
+    outline: none;
+  }
+  
+  .kbd-navigation .square:focus {
+    background: #ddd;
+  }
+  
+  .game {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .game-info {
+    margin-left: 20px;
+  }
+  
+     
