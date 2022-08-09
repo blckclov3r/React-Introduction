@@ -108,7 +108,6 @@ class Board extends React.Component {
     }
 
     const moves = history.map((step, move) => {
-      console.log(step.squares);
       
       const fillAll = step.squares.every(Boolean);
    
