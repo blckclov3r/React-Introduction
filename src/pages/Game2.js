@@ -129,12 +129,13 @@ class Board extends React.Component {
   
 
     return (
-   
-      <div >
-        <p>You probably already know how to play Tic-Tac-Toe. It's a really simple game, right? That's what most people think. But if you really wrap your brain around it, you'll discover that Tic-Tac-Toe isn't quite as simple as you think!
+      <div className='shadow-sm p-4 bg-white'>
+        <p className='mb-5'>You probably already know how to play ○×ゲーム. It's a really simple game, right? That's what most people think. But if you really wrap your brain around it, you'll discover that Tic-Tac-Toe isn't quite as simple as you think!
+      Tic-Tac -Toe (along with a lot of other games) involves looking ahead and trying to figure out what the person playing against you might do next.</p>
+        <div className='w-50 mx-auto '>
+          <div >
 
-Tic-Tac -Toe (along with a lot of other games) involves looking ahead and trying to figure out what the person playing against you might do next.</p>
-          <h1 className='mb-3'>{status}</h1>
+          <h1 className='mb-3 text-muted'>{status}</h1>
           <div className="game">
             
         <div className="game-board">
@@ -149,6 +150,8 @@ Tic-Tac -Toe (along with a lot of other games) involves looking ahead and trying
           <ol>{moves}</ol>
         </div>
       </div>
+      </div>
+        </div>
       </div>
     );
   }
